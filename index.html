@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <Center>упр 253 <br>1)
+<form action="/result.php" method="GET">
+	<input name="test1"><br><br>
+	<input name="test2"><br><br>
+	<input type="submit">
+</form><br>
+2)
+<form action="/result.php" method="POST">
+	<input name="test1"><br><br>
+	<input name="test2"><br><br>
+	<input type="submit">
+</form>
+<hr>
+упр 255 <br>1)
+<h3>После отправки формы выведится на экран суммма этих чисел.</h3>
+
+   <form action="/result.php" method="GET">
+	<input name="test1"><br><br>
+	<input name="test2"><br><br>
+    <input name="test3"><br><br>
+	<input type="submit">
+</form>
+
+
+<?php
+	echo $_GET['test1'];
+?>
+<?php
+	echo $_GET['test1'] . $_GET['test2'];
+?>
+<hr>
+упр 256 <br>1)
+<br><br>
+<h3>Введите</h3>
+<form action="/result.php" method="POST">
+	Ваше имя:<br> <input name="test1"><br><br>
+	Ваш возраст: <br><input name="test2"><br><br>
+</form>
+   <br><br>2)
+    <h1>Введите пароль</h1>
+    <form action="/result.php" method="POST">
+	Пароль:<br><input type="password" name="pass"><br><br>
+	<input type="submit">
+</form>
+   <?php
+	$pass = '12345';
+?>
+ <br><br>3)
+ <h3>Введите</h3>
+ <form action="/result.php" method="POST">
+     Ваш год рождения: <br><input name="test1"><br><br>
+     Ваш месяц: <br><input name="test2"><br><br>
+      Ваш день рождения: <br><input type="password" name="pass"><br><br>
+     <input type="submit">
+ </form>
+
+ <hr>
+ упр 257 <br>1)
+<?php
+	if (!empty($_GET)) {
+		echo $_GET['test1'] + $_GET['test2'];
+	}
+?>
+<form action="/result.php" method="POST">
+    Вашa фамилию: <br><input name="test1"><br><br>
+    Вашe имя: <br><input name="test2"><br><br>
+    Вашe отчество: <br><input type="password" name="pass"><br><br>
+    <input type="submit"></p>
+</form>
+<hr>
+ упр 258 <br>1)
+ <br><h3>Введите ваше имя:</h3>
+ <form action="" method="GET">
+	<input name="test1"><br><br>
+	<input type="submit"><br>
+</form>
+
+<?php
+	} else {
+		echo $_GET['test1'] + $_GET['test2'];
+	}
+?>
+<hr>
+ упр 259 <br>1)
+ <form action="" method="GET">
+	<h3>Введите ваш город:</h3><input name="test1"><br><br>
+	<h3>Введите ваш страну:</h3><input name="test2"><br><br>
+	<input type="submit"><br>
+</form>
+
+<hr>
+ упр 260 <br>1)
+<form action="" method="GET">
+	<input
+		 name="test"
+		value="Введите свой год рождения:"
+	><br><br>
+	<input type="submit">
+</form>
+<hr>
+ упр 261 <br>1)
+ <form action="" method="GET">
+	<input
+		name="test"
+		value="год"
+	><br>
+	
+    <form action="" method="GET"><br>
+        <input
+            name="test"
+            value="день"
+        ><br><br>
+        <input
+            name="test"
+            value="Месяц"
+        ><br><br>
+        <input type="submit">
+    </form>
+</form>
+
+<hr>
+ упр 262 <br>1) 
+ <br>Введите отзыв:
+<form action="" method="GET">
+	<textarea name="test"></textarea>
+	<input type="submit">
+</form>
+<hr>
+ упр 263 <br>1) 
+ <form action="" method="GET">
+	<textarea name="test">Перевод с руского на англиский</textarea>
+	<input type="submit">
+</form>
+
+
+
+ <hr>
+ упр 264 <br>1) 
+ <form action="" method="GET">
+	Ваше имя:<br><input type="checkbox" name="flag">
+	<input name="text">
+	<input type="submit">
+</form>
+ <?php
+ if (!empty($_GET)) { // если форма была отправлена
+     if (isset($_GET['flag'])) { // если флажок отмечен
+         echo 'отмечен';
+     } else {
+         echo 'не отмечен';
+     }
+ }
+?>
+
+
+
+ <hr>
+ упр 265 <br>1) 
+ <form action="" method="GET">
+	Ваш возраст:<br><input type="checkbox" name="flag">
+	<input name="text">
+	<input type="submit">
+</form>
+ <?php
+ if (!empty($_GET)) { // если форма была отправлена
+     if (isset($_GET['flag'])) { // если флажок отмечен
+         echo 'отмечен';
+     } else {
+         echo 'не отмечен';
+     }
+ }
+?>
+ <hr>
+ упр 266 <br>1) 
+ <form action="" method="GET">
+	<input type="hidden" name="flag" value="0">
+	<input
+		type="checkbox"
+		name="flag" <?php
+			if (isset($_GET['flag']) and $_GET['flag'] === '1')
+				echo 'checked';
+			?>
+		>
+	<input type="submit">
+</form>
+<form action="" method="GET">
+	<input type="hidden" name="flag" value="0">
+	<input
+		type="checkbox"
+		name="flag"
+		value="1"
+		<?php if (!empty($_GET['flag'])) echo 'checked' ?>
+	>
+	<input type="submit">
+</form>
+
+ <hr>
+ упр 267 <br>1) 
+<h1>Ваш пол</h1>
+ <form action="" method="GET">
+	<input type="radio" name="radio" value="1">Муж
+	<input type="radio" name="radio" value="2">Жен
+	<input type="radio" name="radio" value="3">Не опознан
+	<input type="submit">
+</form>
+<?php
+	var_dump($_GET['radio']); // '1', '2', '3' или null
+?>
+ <hr>
+ упр 268 <br>1) 
+ <tr>
+    <td align="right" valign="top">Ваш язык</td>
+    <td><select name="hobby" size="7" multiple>
+                <option selected value="1">Русский
+                <option value="2">Казахский
+                <option value="3">Англиский
+        </select>
+    </td>
+   </tr>
+
+
+
+
+
+ <hr>
+ упр 269 <br>1) 
+ <tr>
+    <td align="right" valign="top">Ваша страна</td>
+    <form action="" method="GET">
+        <select name="test">
+            <option>Казахстан</option>
+            <option>Казахстан</option>
+            <option>Казахстан</option>
+        </select>
+        <input type="submit">
+    </form>
+    <br>
+    <?php
+	var_dump($_GET['test']); // 'item1', 'item2' или 'item3'
+?>
+
+
+ <hr>
+ упр 270 <br>1) 
+ <tr>
+    <td align="right" valign="top">Ваш язык</td>
+   <select nаmе="browsers"> 
+    <option selected> Русский
+    <option> Казахский
+    <option> Англиский
+    </select> 
+    <br>
+    <?php
+	var_dump($_GET['test']); // 'item1', 'item2' или 'item3'
+?>
+
+
+ <hr>
+ упр 271 <br>1) 
+ <form action="" method="GET">
+	<select name="test">
+		<option value="1" <?php
+			if (!empty($_GET['test']) and $_GET['test'] === '1') {
+				echo 'selected';
+			}
+		?>1</option>
+		<option value="2" <?php
+			if (!empty($_GET['test']) and $_GET['test'] === '2') {
+				echo 'selected';
+			}
+		?>2</option>
+		<option value="3" <?php
+			if (!empty($_GET['test']) and $_GET['test'] === '3') {
+				echo 'selected';
+			}
+		?>3</option>
+	</select>
+	<input type="submit">
+</form>
+
+ <hr>
+ упр 272 <br>1) 
+ <?php
+ echo $_GET['par1']; 
+?>
+<form action="" method="GET">
+	<select name="test">
+		<option value="1" <?php
+			if (!empty($_GET['test']) and $_GET['test'] === '1') {
+				echo 'selected';
+			}
+		?>10</option>
+		<option value="2" <?php
+			if (!empty($_GET['test']) and $_GET['test'] === '2') {
+				echo 'selected';
+			}
+		?>20</option>
+		<option value="3" <?php
+			if (!empty($_GET['test']) and $_GET['test'] === '3') {
+				echo 'selected';
+			}
+		?>30</option>
+	</select>
+	<input type="submit">
+</form>
+<BR>2)<BR>
+    1?<input type="checkbox" name="flag"><BR>
+    2?<input type="checkbox" name="flag"><BR>
+    3?<input type="checkbox" name="flag">
+<br>3)
+    Сколько будет 2+2=?: 
+    <br> 
+    <input type="radio" 
+    name="group" value="schoolboy"> 3<br> 
+    <input type="radio" 
+    name="group" value= "student"> 4<br> 
+    <input type="radio" 
+     name="group" value="teacher">8 <br> 
+     <br>4)
+     <br>Введите цифру:
+<form action="" method="GET">
+	<textarea name="test"></textarea>
+	<input type="submit">
+</form>
+<br>5)
+<br><br><br>
+<form action="" method="GET">
+	<textarea name="test"></textarea><br><br>
+	<input type="submit">
+</form>
+<?php
+	$arr = ['a', 'b', 'c', 'd', 'e'];
+?>
+<hr>
+ упр 274 <br>1) 
+<a href="https://ru.wikipedia.org/wiki/1_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">1</a><br>
+<a href="https://ru.wikipedia.org/wiki/2_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">2</a><br>
+<a href="https://ru.wikipedia.org/wiki/3_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">3</a>
+<br>2)<br>
+<a href="https://ru.wikipedia.org/wiki/1_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">1</a><br>
+<a href="https://ru.wikipedia.org/wiki/2_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">2</a><br>
+<a href="https://ru.wikipedia.org/wiki/3_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">3</a><br>
+<a href="https://ru.wikipedia.org/wiki/4_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">4</a><br>
+<a href="https://ru.wikipedia.org/wiki/5_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">5</a><br>
+<a href="https://ru.wikipedia.org/wiki/6_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">6</a><br>
+<a href="https://ru.wikipedia.org/wiki/7_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">7</a><br>
+<a href="https://ru.wikipedia.org/wiki/8_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">8</a><br>
+<a href="https://ru.wikipedia.org/wiki/9_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">9</a><br>
+<a href="https://ru.wikipedia.org/wiki/10_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">10</a><br>
+<br>3)
+<form action="/result.php" method="GET">
+	<input name="test1"><br><br>
+	<input name="test2"><br><br>
+</form><br>
+ <hr>
+ упр 274 <br>1) 
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Преобразование температуры</title>
+</head>
+<body>
+
+    <h2>Преобразование температуры</h2>
+    <label for="celsius">Введите температуру в градусах Цельсия:</label>
+    <input type="number" id="celsius" placeholder="Температура в Цельсиях">
+    <button onclick="convertTemperature()">Преобразовать в Фаренгейты</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function convertTemperature() {
+            // Получаем значение температуры в Цельсиях
+            const celsius = document.getElementById('celsius').value;
+
+            // Проверяем, что значение введено
+            if (celsius === "") {
+                document.getElementById('result').textContent = "Пожалуйста, введите температуру в Цельсиях.";
+                return;
+            }
+
+            // Преобразуем в Фаренгейты
+            const fahrenheit = (celsius * 9 / 5) + 32;
+
+            // Выводим результат
+            document.getElementById('result').textContent = Температура в Фаренгейтах: ${fahrenheit.toFixed(2)}°F;
+        }
+    </script>
+
+</body>
+</html>
+</body>
+</html>
